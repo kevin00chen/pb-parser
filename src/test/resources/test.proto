@@ -1,0 +1,74 @@
+syntax = "proto2";
+
+package tutorial;
+
+option java_package = "com.ckm.util.pb";
+option java_outer_classname = "PBTest";
+
+message TestAllType {
+  optional int32 int32 = 1;
+  optional int64 int64 = 2;
+  optional uint32 uint32 = 3;
+  optional uint64 uint64 = 4;
+  optional sint32 sint32 = 5;
+  optional sint64 sint64 = 6;
+  optional bool bool = 7;
+  optional fixed64 fixed64 = 9;
+  optional sfixed64 sfixed64 = 10;
+  optional double double = 11;
+  optional string string = 12;
+  optional fixed32 fixed32 = 14;
+  optional sfixed32 sfixed32 = 15;
+  optional float float = 16;
+  map<string,string> baseMap = 17;
+  optional XMessage x_message = 18;
+  optional EnumType type = 19;
+  repeated XMessage x_message_list = 20;
+  map<string, XMessage> x_message_map = 21;
+}
+
+enum EnumType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+}
+
+message XMessage {
+  optional string id = 1;
+  optional string name = 2;
+  optional int32 age = 3;
+}
+
+message ListTest {
+  repeated int32 int32 = 1;
+  repeated int64 int64 = 2;
+  repeated uint32 uint32 = 3;
+  repeated uint64 uint64 = 4;
+  repeated sint32 sint32 = 5;
+  repeated sint64 sint64 = 6;
+  repeated bool bool = 7;
+  repeated fixed64 fixed64 = 9;
+  repeated sfixed64 sfixed64 = 10;
+  repeated double double = 11;
+  repeated string string = 12;
+  repeated fixed32 fixed32 = 14;
+  repeated sfixed32 sfixed32 = 15;
+  repeated float float = 16;
+}
+
+message MapTest {
+  map<string, int32> int32map = 1;
+  map<string, int64> int64map = 2;
+  map<string, uint32> uint32map = 3;
+  map<string, uint64> uint64map = 4;
+  map<string, sint32> sint32map = 5;
+  map<string, sint64> sint64map = 6;
+  map<string, bool> boolmap = 7;
+  map<string, fixed64> fixed64map = 8;
+  map<string, sfixed64> sfixed64map = 9;
+  map<string, double> doublemap = 10;
+  map<string, string> stringmap = 11;
+  map<string, fixed32> fixed32map = 12;
+  map<string, sfixed32> sfixed32map = 13;
+  map<string, float> floatmap = 14;
+}
